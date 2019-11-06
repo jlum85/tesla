@@ -3,7 +3,7 @@ import React from "react";
 import Option from "./Option";
 
 const SelectOption = props => {
-  const lib = props.cat.lib;
+  const { lib } = props.cat;
   const [opt1, opt2] = props.cat.options;
 
   return (

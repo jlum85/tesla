@@ -1,20 +1,20 @@
 import React from "react";
 
 const Option = props => {
-  const active = props.active;
-  const fw = active ? "normal" : "bold";
-  const colorb = active ? "black" : "blue";
+  // console.log(props);
+  const { active } = props; // const active = props.active
 
   return (
-    <>
-      <button
-        style={{ fontWeight: fw, color: colorb }}
-        onClick={props.onClickOpt}
-        className="option"
-      >
-        {props.name} - {props.price} $
-      </button>
-    </>
+    <div
+      style={{
+        fontWeight: active ? "bold" : "normal",
+        color: active ? "blue" : "grey"
+      }}
+      onClick={props.onClickOpt}
+      className="option"
+    >
+      {props.name} - {new Intl.NumberFormat().format(props.price)} $
+    </div>
   );
 };
 
